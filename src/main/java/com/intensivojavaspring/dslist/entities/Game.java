@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.Objects;
 
+//customização da entidade para virar uma tabela no banco de dados
 @Entity
 @Table(name = "tb_game")
 public class Game {
@@ -12,17 +13,15 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-
+//customização do nome para evitar problemas no banco de dados
     @Column(name = "game_year")
     private Integer year;
     private String genre;
     private String platforms;
     private Double score;
     private String imgUrl;
-
     @Column(columnDefinition = "TEXT")
     private String shortDescription;
-
     @Column(columnDefinition = "TEXT")
     private String longDescription;
 

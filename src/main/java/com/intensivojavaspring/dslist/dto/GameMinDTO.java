@@ -1,7 +1,8 @@
 package com.intensivojavaspring.dslist.dto;
-
+// DTO É O OBJETO MÍNIMO DE UMA ENTIDADE PARA ECONOMIZAR RECURSOS DE API/BANDA
 import com.intensivojavaspring.dslist.entities.Game;
 
+// cria-se uma classe igual à entidade, mas com um subconjunto de atributos
 public class GameMinDTO {
     private Long id;
     private String title;
