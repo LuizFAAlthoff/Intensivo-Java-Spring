@@ -3,6 +3,7 @@ package com.intensivojavaspring.dslist.services;
 import com.intensivojavaspring.dslist.dto.GameDTO;
 import com.intensivojavaspring.dslist.dto.GameMinDTO;
 import com.intensivojavaspring.dslist.entities.Game;
+import com.intensivojavaspring.dslist.projections.GameMinProjection;
 import com.intensivojavaspring.dslist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -32,5 +33,11 @@ public class GameService {
         //Todos os objetos x originalmente Game, irão se transformar num DTO, passando X como argumento e finalizando transformando numa lista
         List<GameMinDTO> resultDto = result.stream().map(x -> new GameMinDTO(x)).toList();
         return resultDto;
+    }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId) {
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
+        return result.stream().map(x -> new GameMinDTO(x)).toList();
     }
 }
