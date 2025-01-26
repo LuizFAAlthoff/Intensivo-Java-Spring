@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "0df6832d-e5a5-4424-86f3-9ff3801b740b",
+		"name": "DS List",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28045084"
+	},
+	"item": [
+		{
+			"name": "get all gameMinDTO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}/games"
+			},
+			"response": []
+		},
+		{
+			"name": "get game by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}/games/1"
+			},
+			"response": []
+		},
+		{
+			"name": "get all gamelist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}/lists"
+			},
+			"response": []
+		},
+		{
+			"name": "get games by list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}/lists/2/games"
+			},
+			"response": []
+		},
+		{
+			"name": "post replace element position in a list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sourceIndex\": 3,\r\n    \"destinationIndex\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}/lists/2/replacement"
+			},
+			"response": []
+		}
+	]
+}
